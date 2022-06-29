@@ -75,7 +75,7 @@ function handleGameProgress() {
 
     noLoop();
 
-    const scoreVal = parseInt(scoreElem.html().substring(8));
+    const scoreVal = parseInt(scoreElem.html().substring(13));
 
     scoreElem.html('Jogo encerrado. Você morreu! Sua pontuação: ' + scoreVal);
   }
@@ -97,7 +97,7 @@ function handleFruitCollect() {
 
   if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
 
-    const prevScore = parseInt(scoreElem.html().substring(8));
+    const prevScore = parseInt(scoreElem.html().substring(13));
 
     scoreElem.html('Pontuação: ' + (prevScore + 1));
 
