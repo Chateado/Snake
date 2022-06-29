@@ -19,7 +19,7 @@ function setup() {
   scoreElem.id = 'score';
   scoreElem.style('color', 'green');
 
-  createCanvas(500, 500);
+  createCanvas(1000, 1000);
   frameRate(15);
   stroke(255);
   strokeWeight(10);
@@ -75,7 +75,7 @@ function handleGameProgress() {
 
     noLoop();
 
-    const scoreVal = parseInt(scoreElem.html().substring(13));
+    const scoreVal = parseInt(scoreElem.html().substring(12));
 
     scoreElem.html('Jogo encerrado. Você morreu! Sua pontuação: ' + scoreVal);
   }
@@ -97,12 +97,13 @@ function handleFruitCollect() {
 
   if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
 
-    const prevScore = parseInt(scoreElem.html().substring(13));
+    const prevScore = parseInt(scoreElem.html().substring(12));
 
     scoreElem.html('Pontuação: ' + (prevScore + 1));
 
     xCor.unshift(xCor[0]);
     yCor.unshift(yCor[0]);
+
     numSegments++;
 
     handleFruitUpdate();
