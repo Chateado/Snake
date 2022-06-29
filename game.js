@@ -96,8 +96,11 @@ function handleFruitCollect() {
   point(xFruit, yFruit);
 
   if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
+    
     const prevScore = parseInt(scoreElem.html().substring(8));
-    scoreElem.html('Score = ' + (prevScore + 1));
+
+    scoreElem.html('Pontuação: ' + (prevScore + 1));
+
     xCor.unshift(xCor[0]);
     yCor.unshift(yCor[0]);
     numSegments++;
@@ -114,19 +117,27 @@ function handleFruitUpdate() {
 function handleMovement() {
   switch (keyCode) {
     case 38: {
-        direction = 'up';
+        if (direction !== 'down') {
+            direction = 'up';
+        }
         break;
     }
     case 40: {
-        direction = 'down';
+        if (direction !== 'up') {
+            direction = 'down';
+        }
         break;
     }
     case 37: {
-        direction = 'left';
+        if (direction !== 'right') {
+            direction = 'left';
+        }
         break;
     }
     case 39: {
-        direction = 'right';
+        if (direction !== 'left') {
+            direction = 'right';
+        }
         break;
     }
   }
