@@ -96,7 +96,7 @@ function handleFruitCollect() {
   point(xFruit, yFruit);
 
   if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
-    
+
     const prevScore = parseInt(scoreElem.html().substring(8));
 
     scoreElem.html('Pontuação: ' + (prevScore + 1));
@@ -114,7 +114,7 @@ function handleFruitUpdate() {
   yFruit = floor(random(10, (height - 100) / 10)) * 10;
 }
 
-function handleMovement() {
+function keyPressed() {
   switch (keyCode) {
     case 38: {
         if (direction !== 'down') {
